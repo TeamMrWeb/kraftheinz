@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         arial: ["Arial"],
         bebasNeue: ["BebasNeue"]
+      },
+      colors: {
+        crimson: "#DF2827"
       }
     }
   },
