@@ -8,7 +8,8 @@ export default {
         bebasNeue: ["BebasNeue"]
       },
       colors: {
-        crimson: "#DF2827"
+        crimson: "#DF2827",
+        mustard: "#FFC70A"
       }
     }
   },
