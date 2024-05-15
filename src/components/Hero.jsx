@@ -18,12 +18,6 @@ export default function Hero() {
           alt=""
         />
       </div>
-      {/* <img
-        className="w-full h-[400px] object-cover bg-center bg-no-repeat bg-cover"
-        src="/assets/images/kh-heroes-poster.webp"
-        alt="logo"
-      /> */}
-      {/* <div className="shadow-section absolute bottom-10 left-0 w-full h-2 bg-black z-40"></div> */}
     </div>
   )
 }
