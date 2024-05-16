@@ -3,7 +3,7 @@ export default function SocialMedia({ className }) {
     <section
       className={`w-full flex justify-center items-center flex-col gap-5 ${className}`}
     >
-      <h2 className="font-bebasNeue text-[26px] md:text-[44.89px]">
+      <h2 className="font-bebasNeue text-[26px] md:text-[34px]">
         SÍGUENOS EN NUESTRAS REDES
       </h2>
       <div className="flex items-center gap-5">
