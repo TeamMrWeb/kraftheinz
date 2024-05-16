@@ -1,45 +1,71 @@
 import Button from "./Button"
+import ButtonWithImage from "./form/ButtonWithImage"
+import InputGroup from "./form/InputGroup"
+import TextareaGroup from "./form/TextareaGroup"
 
 export default function Form() {
   return (
-    <form className="flex flex-col gap-10 w-full font-bold font-arial text-[27px]">
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="fullname">Nombre y Apellido</label>
-          <input type="text" name="fullname" autoComplete="name" />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="phone">Número de teléfono</label>
-          <input type="number" name="phone" autoComplete="tel" />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="description">
-            ¿A quién postulas como Héroe del Verano y por qué?
-          </label>
-          <textarea type="text" name="description" className="resize-none" />
-        </div>
+    <form className="flex flex-col gap-7 md:gap-10 w-full font-bold font-arial md:text-[27px] mt-10">
+      <div className="flex flex-col gap-5 md:gap-10">
+        <InputGroup
+          label="Nombre y Apellido"
+          htmlFor="fullname"
+          inputProps={{
+            type: "text",
+            name: "fullname",
+            autoComplete: "name",
+            className: "h-5"
+          }}
+        />
+        <InputGroup
+          label="Número de teléfono"
+          htmlFor="phone"
+          inputProps={{
+            type: "number",
+            name: "phone",
+            autoComplete: "tel",
+            className: "h-5"
+          }}
+        />
+        <TextareaGroup
+          label="¿A quién postulas como Héroe del Verano y por qué?"
+          htmlFor="description"
+          textareaProps={{
+            type: "text",
+            name: "description",
+            textareaClassName: "resize-none"
+          }}
+        />
       </div>
       <div className="flex flex-col gap-5 font-bebasNeue">
-        <Button className="bg-crimson flex justify-center items-center gap-3 rounded-full h-[68px] text-[27px] max-w-[422px] w-full">
-          SUBE LA FOTO DE TU HÉROE DEL VERANO
-          <img src="/assets/images/download-icon.png" alt="Icono de descarga" />
-        </Button>
-        <Button className="bg-crimson flex justify-center items-center gap-3 rounded-full h-[68px] text-[27px] max-w-[422px] w-full">
-          SUBE TU RECIBO DE COMPRA
-          <img src="/assets/images/download-icon.png" alt="Icono de descarga" />
-        </Button>
+        <ButtonWithImage
+          text="SUBE TU RECIBO DE COMPRA"
+          imageProps={{
+            src: "/assets/images/download-icon.png",
+            alt: "Icono de descarga"
+          }}
+          imageClassName="w-4 mb-1"
+        />
+        <ButtonWithImage
+          text="SUBE TU VIDEO"
+          imageProps={{
+            src: "/assets/images/download-icon.png",
+            alt: "Icono de descarga"
+          }}
+          imageClassName="w-4 mb-1"
+        />
       </div>
-      <div className="flex items-center gap-5">
+      <div className="flex gap-5 text-base">
         <input
           type="checkbox"
           name="termsAndConditions"
-          className="text-2xl size-6"
+          className="size-4 md:size-6 mt-1"
         />
         <label htmlFor="termsAndConditions">
           He leído y acepto los términos y condiciones.
         </label>
       </div>
-      <Button className="bg-crimson flex self-center w-full justify-center items-center gap-3 rounded-full h-[68px] text-[56.8px] max-w-[422px] font-bebasNeue">
+      <Button className="bg-crimson flex self-center w-full justify-center items-center gap-3 rounded-full h-[68px] text-[33px] md:text-[56.8px] max-w-[422px] font-bebasNeue md:mt-5">
         ENVIAR
       </Button>
     </form>
