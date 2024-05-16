@@ -5,12 +5,19 @@ export default function InputGroup({
   label,
   inputProps,
   inputClassName,
-  htmlFor
+  htmlFor,
+  children,
+  id
 }) {
   return (
-    <div className={`flex flex-col gap-1 ${containerClassName}`}>
+    <div
+      className={`flex flex-col gap-1${
+        containerClassName ? containerClassName : ""
+      }`}
+    >
       <label htmlFor={htmlFor}>{label}</label>
-      <Input props={inputProps} className={inputClassName} />
+      <Input props={inputProps} className={inputClassName} id={id} />
+      {children}
     </div>
   )
 }
