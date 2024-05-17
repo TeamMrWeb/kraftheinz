@@ -13,51 +13,30 @@
 
 @keyframes bounce {
   0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  25% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(0);
   }
   50% {
-    transform: scale(0.8);
+    transform: scale(1.2);
   }
   75% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeInFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  50% {
-    opacity: 0;
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
-}
-
-.background {
-  animation: fadeInFromTop 2s ease-in-out;
 }
 
 .logo-los {
-  animation: bounce 1s 0.2s ease-in-out;
+  animation: bounce 0.5s ease-in-out;
 }
 .logo-heroes {
-  animation: bounce 1s 0.3s ease-in-out;
+  animation: bounce 0.5s 0.5s ease-in-out;
 }
 .logo-del {
-  animation: bounce 1s 0.6s ease-in-out;
+  animation: bounce 0.5s 1s ease-in-out;
 }
 .logo-verano {
-  animation: bounce 1s 0.9s ease-in-out;
+  animation: bounce 0.5s 1.5s ease-in-out;
 }
