@@ -61,8 +61,15 @@
   }
 }
 
-.background,
+.background {
+  animation: 1.8s ease 0s normal forwards 1 fadein;
+}
+
 .background-sun,
 .kraftheninz-logo {
-  animation: 1.8s ease 0s normal forwards 1 fadein;
+  animation: 2.5s ease 0s normal forwards 1 fadein;
+}
+
+body {
+  overflow-y: scroll;
 }

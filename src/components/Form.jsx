@@ -121,6 +121,7 @@ export default function Form() {
           <input
             type="checkbox"
             name="termsAndConditions"
+            id="termsAndConditions"
             className="size-4 md:size-6 mt-1 md:mt-0"
             required
           />
