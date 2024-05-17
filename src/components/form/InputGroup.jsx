@@ -7,7 +7,8 @@ export default function InputGroup({
   inputClassName,
   htmlFor,
   children,
-  id
+  id,
+  required
 }) {
   return (
     <div
@@ -16,7 +17,12 @@ export default function InputGroup({
       }`}
     >
       <label htmlFor={htmlFor}>{label}</label>
-      <Input props={inputProps} className={inputClassName} id={id} />
+      <Input
+        props={inputProps}
+        className={inputClassName}
+        id={id}
+        required={required}
+      />
       {children}
     </div>
   )

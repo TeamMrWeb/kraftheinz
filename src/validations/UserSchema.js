@@ -35,5 +35,10 @@ export const userSchema = z.object({
     .refine(
       file => ACCEPTED_IMAGE_TYPES.includes(file?.type),
       "Solo se admiten formatos .jpg, .jpeg, .png, y .webp"
-    )
+    ),
+  termsAndConditions: z
+    .string({
+      message: "Debes aceptar los términos y condiciones para continuar"
+    })
+    .transform(value => value === "on")
 })

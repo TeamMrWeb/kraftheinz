@@ -1,4 +1,3 @@
-import Button from "../Button"
 import Image from "../Image"
 
 export default function ButtonWithImage({
@@ -6,10 +5,19 @@ export default function ButtonWithImage({
   src,
   alt,
   imageProps,
-  imageClassName
+  imageClassName,
+  className,
+  htmlFor,
+  onClick
 }) {
   return (
-    <Button className="bg-crimson flex justify-center font-normal items-center text-lg gap-3 rounded-full text-center h-[44px] md:h-[68px] md:text-[27px] max-w-[422px] w-full">
+    <label
+      className={`bg-crimson flex justify-center font-normal items-center text-lg gap-3 rounded-full text-center h-[44px] md:h-[68px] md:text-[27px] max-w-[422px] w-full cursor-pointer ${
+        className ? className : ""
+      }`}
+      htmlFor={htmlFor}
+      onClick={onClick}
+    >
       {text}
       <Image
         src={src}
@@ -17,6 +25,6 @@ export default function ButtonWithImage({
         props={imageProps}
         className={imageClassName}
       />
-    </Button>
+    </label>
   )
 }

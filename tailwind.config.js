@@ -9,6 +9,7 @@ export default {
       },
       colors: {
         crimson: "#DF2827",
+        "dark-crimson": "#c42623",
         mustard: "#FFC70A"
       }
     }

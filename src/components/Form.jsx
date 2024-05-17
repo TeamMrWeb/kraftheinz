@@ -4,10 +4,19 @@ import ButtonWithImage from "./form/ButtonWithImage"
 import InputError from "./form/InputError"
 import InputGroup from "./form/InputGroup"
 import TextareaGroup from "./form/TextareaGroup"
+import PreviewImage from "./PreviewImage"
 
 export default function Form() {
-  const { handleSubmit, inputErrors } = useForm()
-  console.log(inputErrors)
+  const {
+    handleSubmit,
+    inputErrors,
+    previewImage,
+    handleSetPreviewImage,
+    showPreviewImage,
+    handleShowPreviewImage,
+    removePreviewImage
+  } = useForm()
+
   return (
     <form
       className="flex flex-col gap-7 md:gap-10 w-full font-bold font-arial md:text-[22px] md:mt-10"
@@ -24,6 +33,7 @@ export default function Form() {
             autoComplete: "name",
             className: "h-5"
           }}
+          required
           inputClassName="text-black pl-2"
         >
           {inputErrors?.fullname && (
@@ -40,6 +50,7 @@ export default function Form() {
             autoComplete: "tel",
             className: "h-5"
           }}
+          required
           inputClassName="text-black pl-2"
         >
           {inputErrors?.phone && (
@@ -63,30 +74,62 @@ export default function Form() {
       <div className="flex flex-col gap-5 font-bebasNeue items-center">
         <ButtonWithImage
           text="SUBE TU RECIBO DE COMPRA"
-          src={"/assets/images/download-icon.png"}
-          alt={"Icono de descarga"}
-          imageClassName="w-4 mb-1"
+          src={
+            previewImage
+              ? "/assets/images/eye-icon.png"
+              : "/assets/images/download-icon.png"
+          }
+          alt={"Icono de cargar archivo"}
+          imageClassName={previewImage ? "w-7" : "w-5 mb-1"}
+          className="duration-300 hover:bg-dark-crimson"
+          htmlFor={previewImage ? "" : "receipt"}
+          onClick={handleShowPreviewImage}
         />
+        <input
+          type="file"
+          id="receipt"
+          className="invisible absolute"
+          onChange={handleSetPreviewImage}
+        />
+        {showPreviewImage && (
+          <PreviewImage
+            previewImage={previewImage}
+            removePreviewImage={removePreviewImage}
+          />
+        )}
         <ButtonWithImage
           text="SUBE TU VIDEO"
-          src={"/assets/images/download-icon.png"}
-          alt="Icono de descarga"
-          imageClassName="w-4 mb-1"
+          src={
+            previewImage
+              ? "/assets/images/eye-icon.png"
+              : "/assets/images/download-icon.png"
+          }
+          alt="Icono de cargar archivo"
+          imageClassName={previewImage ? "w-7" : "w-5 mb-1"}
+          className="duration-300 hover:bg-dark-crimson"
+          htmlFor="video"
         />
+        <input type="file" id="video" className="invisible absolute" />
       </div>
-      <div className="flex gap-5 text-base md:text-[22px]">
-        <input
-          type="checkbox"
-          name="termsAndConditions"
-          className="size-4 md:size-6 mt-1 md:mt-0"
-        />
-        <label htmlFor="termsAndConditions">
-          He leído y acepto los términos y condiciones.
-        </label>
+      <div className="flex flex-col gap-2">
+        <div className="flex gap-5 text-base md:text-[22px]">
+          <input
+            type="checkbox"
+            name="termsAndConditions"
+            className="size-4 md:size-6 mt-1 md:mt-0"
+            required
+          />
+          <label htmlFor="termsAndConditions">
+            He leído y acepto los términos y condiciones.
+          </label>
+        </div>
+        {inputErrors?.termsAndConditions && (
+          <InputError message={inputErrors?.termsAndConditions?.message} />
+        )}
       </div>
       <Button
         type="submit"
-        className="bg-crimson flex self-center w-full justify-center items-center gap-3 rounded-full h-[44px] text-center md:h-[68px] text-[33px] md:text-[40px] max-w-[422px] font-bebasNeue md:mt-5"
+        className="bg-crimson flex self-center w-full duration-300 hover:bg-dark-crimson justify-center items-center gap-3 rounded-full h-[44px] text-center md:h-[68px] text-[33px] md:text-[40px] max-w-[422px] font-bebasNeue md:mt-5"
       >
         ENVIAR
       </Button>
