@@ -17,7 +17,6 @@ export default function App() {
       <PreLoader>
         <>
           <Hero />
-          <div className="shadow-[0_10px_20px_20px_rgb(0,0,0)] md:shadow-[0_10px_30px_30px_rgb(0,0,0)] w-full z-40"></div>
           {ready && (
             <>
               <div className="w-full flex justify-center flex-col items-center top-shadow z-20 bg-black rounded-br-[90px] md:rounded-br-[150px] pb-8 md:pb-20 pt-10 md:pt-14">

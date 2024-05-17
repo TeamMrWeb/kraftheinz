@@ -26,7 +26,7 @@
     transform: scale(1);
   }
   87.5% {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   100% {
     transform: scale(1);
@@ -48,7 +48,7 @@
     transform: scale(1.05);
   }
   67.5% {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   70% {
     transform: scale(1);

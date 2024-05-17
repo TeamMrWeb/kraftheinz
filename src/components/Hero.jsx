@@ -2,12 +2,18 @@ export default function Hero() {
   return (
     <div className="w-full flex relative bg-black h-[256px] md:h-[400px]">
       <div
-        className="w-full bg-local bg-[center_bottom_-90vw] md:bg-[center_top_-15vw] lg:bg-[center_top_-25vw] xl:bg-[center_top_-30vw] 2xl:bg-[center_top_-35vw] bg-no-repeat bg-cover relative flex justify-center items-center z-0 background"
+        className="md:flex w-full bg-local bg-bottom bg-no-repeat bg-cover relative hidden justify-center items-center z-0 background"
         style={{
-          backgroundImage: `url(${"/assets/images/kh-heroes-poster.webp"})`
+          backgroundImage: `url(${"/assets/images/kh-heroes-poster-desktop.webp"})`
         }}
       ></div>
-      <div className="h-full absolute m-auto flex flex-col justify-center items-center w-full pb-5 md:pb-10">
+      <div
+        className="md:hidden w-full bg-local bg-bottom bg-no-repeat bg-cover relative flex justify-center items-center z-0 background"
+        style={{
+          backgroundImage: `url(${"/assets/images/kh-heroes-poster-mobile.webp"})`
+        }}
+      ></div>
+      <div className="h-full absolute m-auto flex flex-col justify-center items-center w-full pb-10 md:pb-14">
         <div className="flex flex-col items-center relative">
           <img
             className="w-[30px] md:w-[50px] object-cover bg-center bg-no-repeat bg-cover m-auto z-10 absolute top-0 left-[40%] logo-los"
@@ -41,7 +47,7 @@ export default function Hero() {
         />
       </div>
       <img
-        className="w-[130px] md:w-[190px] object-cover absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-10 kraftheninz-logo"
+        className="w-[130px] md:w-[190px] object-cover absolute left-1/2 -translate-x-1/2 bottom-[30px] md:bottom-[40px] lg:bottom-[40px] xl:bottom-[50px] kraftheninz-logo"
         src="/assets/images/kraftheinz-logo.png"
         alt=""
       />
