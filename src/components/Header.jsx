@@ -1,9 +1,9 @@
 export default function Header() {
   return (
-    <header className="flex w-full flex-col gap-10 items-center text-center">
+    <header className="flex w-full flex-col gap-10 items-center text-center z-10">
       <h1
         className="tracking-wide uppercase text-[38px] md:text-6xl"
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-offset="0"
         data-aos-duration="1000"
         data-aos-once="true"
@@ -12,7 +12,7 @@ export default function Header() {
       </h1>
       <div
         className="flex items-end gap-1 text-start"
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-offset="0"
         data-aos-duration="1000"
         data-aos-once="true"

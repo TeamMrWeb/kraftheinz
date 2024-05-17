@@ -114,7 +114,7 @@ export default function Form() {
       <div className="flex flex-col gap-2">
         <div
           className="flex gap-5 text-base md:text-[22px]"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-once="true"
         >

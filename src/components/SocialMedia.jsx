@@ -2,7 +2,7 @@ export default function SocialMedia({ className }) {
   return (
     <section
       className={`w-full flex justify-center items-center flex-col gap-5 ${className}`}
-      data-aos="fade-down"
+      data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true"
     >

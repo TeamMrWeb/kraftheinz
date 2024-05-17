@@ -17,7 +17,7 @@ export default function ButtonWithImage({
       }`}
       htmlFor={htmlFor}
       onClick={onClick}
-      data-aos="fade-down"
+      data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true"
     >
