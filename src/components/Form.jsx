@@ -73,6 +73,19 @@ export default function Form() {
       </div>
       <div className="flex flex-col gap-5 font-bebasNeue items-center">
         <ButtonWithImage
+          text="SUBE LA FOTO DE TU HÉROE"
+          src={
+            previewImage
+              ? "/assets/images/eye-icon.png"
+              : "/assets/images/download-icon.png"
+          }
+          alt="Icono de cargar archivo"
+          imageClassName={previewImage ? "w-7" : "w-5 mb-1"}
+          className="duration-300 hover:bg-dark-crimson"
+          htmlFor="video"
+        />
+        <input type="file" id="video" className="invisible absolute" />
+        <ButtonWithImage
           text="SUBE TU RECIBO DE COMPRA"
           src={
             previewImage
@@ -97,19 +110,6 @@ export default function Form() {
             removePreviewImage={removePreviewImage}
           />
         )}
-        <ButtonWithImage
-          text="SUBE TU VIDEO"
-          src={
-            previewImage
-              ? "/assets/images/eye-icon.png"
-              : "/assets/images/download-icon.png"
-          }
-          alt="Icono de cargar archivo"
-          imageClassName={previewImage ? "w-7" : "w-5 mb-1"}
-          className="duration-300 hover:bg-dark-crimson"
-          htmlFor="video"
-        />
-        <input type="file" id="video" className="invisible absolute" />
       </div>
       <div className="flex flex-col gap-2">
         <div
