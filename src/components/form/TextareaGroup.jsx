@@ -13,6 +13,8 @@ export default function TextareaGroup({
       className={`flex flex-col gap-1${
         containerClassName ? containerClassName : ""
       }`}
+      data-aos="fade-down"
+      data-aos-offset="50"
     >
       <label htmlFor={name}>{label}</label>
       <Textarea

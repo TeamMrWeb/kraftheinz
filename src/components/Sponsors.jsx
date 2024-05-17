@@ -8,16 +8,19 @@ export default function Sponsors({ className }) {
           className="w-12 md:w-24"
           src="/assets/images/oscar-mayer-logo.webp"
           alt="Logo de Oscar Mayer"
+          data-aos="fade-down"
         />
         <img
           className="w-20 md:w-40"
           src="/assets/images/philadelphia-logo.webp"
           alt="Logo de Philadelphia"
+          data-aos="fade-down"
         />
         <img
           className="w-16 md:w-32"
           src="/assets/images/heinz-logo.webp"
           alt="Logo de Heinz"
+          data-aos="fade-down"
         />
       </div>
     </aside>

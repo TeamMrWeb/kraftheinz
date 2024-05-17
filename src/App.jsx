@@ -1,11 +1,18 @@
+import { useEffect } from "react"
 import Form from "./components/Form"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Rules from "./components/Rules"
 import SocialMedia from "./components/SocialMedia"
 import Sponsors from "./components/Sponsors"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 export default function App() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <div className="font-bebasNeue flex flex-col w-full h-full min-h-screen text-white items-center relative">
       <Hero />
