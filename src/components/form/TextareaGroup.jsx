@@ -15,6 +15,7 @@ export default function TextareaGroup({
       }`}
       data-aos="fade-down"
       data-aos-offset="50"
+      data-aos-duration="1000"
     >
       <label htmlFor={name}>{label}</label>
       <Textarea

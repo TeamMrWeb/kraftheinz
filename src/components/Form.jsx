@@ -115,6 +115,7 @@ export default function Form() {
         <div
           className="flex gap-5 text-base md:text-[22px]"
           data-aos="fade-down"
+          data-aos-duration="1000"
         >
           <input
             type="checkbox"
@@ -133,7 +134,6 @@ export default function Form() {
       <Button
         type="submit"
         className="bg-crimson flex self-center w-full duration-300 hover:bg-dark-crimson justify-center items-center gap-3 rounded-full h-[44px] text-center md:h-[68px] text-[33px] md:text-[40px] max-w-[422px] font-bebasNeue md:mt-5"
-        data-aos="fade-down"
       >
         ENVIAR
       </Button>
