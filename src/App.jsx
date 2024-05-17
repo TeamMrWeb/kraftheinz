@@ -1,24 +1,20 @@
 import Form from "./components/Form"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
-import Loader from "./components/Loader"
+import PreLoader from "./components/PreLoader"
 import Rules from "./components/Rules"
 import SocialMedia from "./components/SocialMedia"
 import Sponsors from "./components/Sponsors"
 import useAos from "./hooks/useAos"
-import usePreLoader from "./hooks/usePreLoader"
 import useReadyContent from "./hooks/useReadyContent"
 
 export default function App() {
   useAos()
-  const { loading } = usePreLoader()
   const { ready } = useReadyContent()
 
   return (
     <div className="font-bebasNeue flex flex-col w-full h-full min-h-screen text-white items-center relative bg-black">
-      {loading ? (
-        <Loader />
-      ) : (
+      <PreLoader>
         <>
           <Hero />
           <div className="shadow-[0_10px_20px_20px_rgb(0,0,0)] md:shadow-[0_10px_30px_30px_rgb(0,0,0)] w-full z-40"></div>
@@ -38,7 +34,7 @@ export default function App() {
             </>
           )}
         </>
-      )}
+      </PreLoader>
     </div>
   )
 }

@@ -7,7 +7,7 @@ const useReadyContent = () => {
   useEffect(() => {
     setTimeout(() => {
       setReady(true)
-    }, 4200)
+    }, 4800)
   }, [])
 
   return { ready }

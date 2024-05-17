@@ -1,20 +1,40 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-export default function usePreLoader() {
-  const [loading, setLoading] = useState(true)
+const images = [
+  "/assets/images/los.png",
+  "/assets/images/heroes.png",
+  "/assets/images/del.png",
+  "/assets/images/verano.png"
+]
 
-  const handleFetch = () => {
-    fetch("https://kraftheinz-kappa.vercel.app/")
-      .then(response => response.json())
-      .finally(() => {
-        setLoading(false)
-      })
-  }
+export default function usePreLoader() {
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    handleFetch()
+    if (images && images.length > 0) {
+      const loadImage = src => {
+        return new Promise(resolve => {
+          const img = new Image()
+          img.src = src
+          img.onload = () => resolve(src)
+          img.onerror = () => resolve(src)
+        })
+      }
+      const loadImages = async () => {
+        await Promise.all(images.map(img => loadImage(img)))
+        await handleFetch()
+        setReady(true)
+      }
+      loadImages()
+    } else {
+      setReady(true)
+    }
   }, [])
 
-  return { loading }
+  const handleFetch = async () => {
+    await fetch("https://kraftheinz-kappa.vercel.app/")
+  }
+
+  return { ready }
 }
