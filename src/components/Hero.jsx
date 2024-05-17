@@ -10,16 +10,16 @@ export default function Hero() {
   useEffect(() => {
     setTimeout(() => {
       logoLosRef.current.style.opacity = "1"
-    }, 400)
-    setTimeout(() => {
-      logoHeroesRef.current.style.opacity = "1"
     }, 900)
     setTimeout(() => {
-      logoDelRef.current.style.opacity = "1"
+      logoHeroesRef.current.style.opacity = "1"
     }, 1400)
     setTimeout(() => {
-      logoVeranoRef.current.style.opacity = "1"
+      logoDelRef.current.style.opacity = "1"
     }, 1900)
+    setTimeout(() => {
+      logoVeranoRef.current.style.opacity = "1"
+    }, 2400)
   }, [])
 
   return (
@@ -28,6 +28,7 @@ export default function Hero() {
         className="w-full bg-local bg-[center_bottom_-90vw] md:bg-[center_top_-15vw] lg:bg-[center_top_-25vw] xl:bg-[center_top_-30vw] 2xl:bg-[center_top_-35vw] bg-no-repeat bg-cover relative flex justify-center items-center"
         data-aos="fade-up"
         data-aos-duration="1000"
+        data-aos-once="true"
         style={{
           backgroundImage: `url(${"/assets/images/kh-heroes-poster.webp"})`
         }}
@@ -70,6 +71,9 @@ export default function Hero() {
           className="w-[150px] md:w-[190px] object-cover mt-2"
           src="/assets/images/kraftheinz-logo.png"
           alt=""
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
         />
       </div>
     </div>

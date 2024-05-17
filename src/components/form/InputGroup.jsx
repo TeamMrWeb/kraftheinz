@@ -18,6 +18,7 @@ export default function InputGroup({
       data-aos="fade-down"
       data-aos-offset="50"
       data-aos-duration="1000"
+      data-aos-once="true"
     >
       <label htmlFor={htmlFor}>{label}</label>
       <Input

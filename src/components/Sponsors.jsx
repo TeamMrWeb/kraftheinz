@@ -11,6 +11,7 @@ export default function Sponsors({ className }) {
           data-aos="fade-down"
           data-aos-duration="1000"
           data-aos-delay="200"
+          data-aos-offset="0"
         />
         <img
           className="w-20 md:w-40"
@@ -18,6 +19,7 @@ export default function Sponsors({ className }) {
           alt="Logo de Philadelphia"
           data-aos="fade-down"
           data-aos-duration="1000"
+          data-aos-offset="0"
           data-aos-delay="400"
         />
         <img
@@ -26,6 +28,7 @@ export default function Sponsors({ className }) {
           alt="Logo de Heinz"
           data-aos="fade-down"
           data-aos-duration="1000"
+          data-aos-offset="0"
           data-aos-delay="600"
         />
       </div>

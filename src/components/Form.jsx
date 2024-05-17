@@ -116,6 +116,7 @@ export default function Form() {
           className="flex gap-5 text-base md:text-[22px]"
           data-aos="fade-down"
           data-aos-duration="1000"
+          data-aos-once="true"
         >
           <input
             type="checkbox"
