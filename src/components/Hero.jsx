@@ -7,7 +7,7 @@ export default function Hero() {
           backgroundImage: `url(${"/assets/images/kh-heroes-poster.webp"})`
         }}
       ></div>
-      <div className="h-full absolute m-auto flex flex-col justify-center items-center w-full md:mb-10">
+      <div className="h-full absolute m-auto flex flex-col justify-center items-center w-full md:pb-10">
         <div className="relative flex justify-center items-center h-min">
           <div className="flex flex-col items-center relative">
             <img
@@ -38,7 +38,7 @@ export default function Hero() {
           alt=""
         />
         <img
-          className="w-[150px] md:w-[190px] object-cover mt-2 kraftheninz-logo"
+          className="w-[150px] md:w-[190px] object-cover absolute bottom-10 kraftheninz-logo"
           src="/assets/images/kraftheinz-logo.png"
           alt=""
         />

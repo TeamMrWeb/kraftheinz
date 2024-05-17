@@ -11,42 +11,82 @@
   }
 }
 
-@keyframes bounce {
+@keyframes bounce1 {
   0% {
     opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
     transform: scale(0);
   }
-  50% {
+  40% {
+    opacity: 0;
+  }
+  40.1% {
     opacity: 1;
-    transform: scale(1.2);
   }
   75% {
-    opacity: 1;
+    transform: scale(1.05);
+  }
+  87.5% {
     transform: scale(0.9);
   }
   100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce4 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    opacity: 0;
+  }
+  40.1% {
     opacity: 1;
+  }
+  55% {
+    transform: scale(1.05);
+  }
+  67.5% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce5 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    opacity: 0;
+  }
+  40.1% {
+    opacity: 1;
+  }
+  55% {
+    transform: scale(1.05);
+  }
+  67.5% {
+    transform: scale(0.9);
+  }
+  70% {
     transform: scale(1);
   }
 }
 
 .logo-los {
-  animation: 1.5s ease 0s normal forwards 1 bounce;
+  animation: bounce1 1.5s ease-in-out;
 }
 .logo-heroes {
-  animation: 1.8s ease 0s normal forwards 1 bounce;
+  animation: bounce1 2.5s ease-in-out;
 }
 .logo-del {
-  animation: 2s ease 0s normal forwards 1 bounce;
+  animation: bounce4 4s ease-in-out;
 }
 .logo-verano {
-  animation: 2.4s ease 0s normal forwards 1 bounce;
+  animation: bounce5 5s ease-in-out;
 }
 
 @keyframes fadein {
@@ -62,12 +102,15 @@
 }
 
 .background {
-  animation: 1.8s ease 0s normal forwards 1 fadein;
+  animation: 4.5s ease 0s normal forwards 1 fadein;
 }
 
-.background-sun,
+.background-sun {
+  animation: 5.5s ease 0s normal forwards 1 fadein;
+}
+
 .kraftheninz-logo {
-  animation: 2.5s ease 0s normal forwards 1 fadein;
+  animation: 5.5s ease 0s normal forwards 1 fadein;
 }
 
 body {
