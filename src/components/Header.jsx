@@ -1,10 +1,22 @@
 export default function Header() {
   return (
     <header className="flex w-full flex-col gap-10 items-center text-center">
-      <h1 className="tracking-wide uppercase text-[38px] md:text-6xl">
+      <h1
+        className="tracking-wide uppercase text-[38px] md:text-6xl"
+        data-aos="fade-down"
+        data-aos-offset="0"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         ¡GRAN SORTEO SEMANAL!
       </h1>
-      <div className="flex items-end gap-1 text-start">
+      <div
+        className="flex items-end gap-1 text-start"
+        data-aos="fade-down"
+        data-aos-offset="0"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         <h2 className="uppercase text-2xl md:text-4xl font-normal leading-none">
           SOBRE
           <div className="flex gap-1 text-crimson leading-normal">

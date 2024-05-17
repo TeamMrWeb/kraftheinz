@@ -4,6 +4,7 @@ export default function SocialMedia({ className }) {
       className={`w-full flex justify-center items-center flex-col gap-5 ${className}`}
       data-aos="fade-down"
       data-aos-duration="1000"
+      data-aos-once="true"
     >
       <h2 className="font-bebasNeue text-[26px] md:text-[34px]">
         SÍGUENOS EN NUESTRAS REDES

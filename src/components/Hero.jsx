@@ -10,16 +10,16 @@ export default function Hero() {
   useEffect(() => {
     setTimeout(() => {
       logoLosRef.current.style.opacity = "1"
-    }, 900)
+    }, 500)
     setTimeout(() => {
       logoHeroesRef.current.style.opacity = "1"
-    }, 1400)
+    }, 600)
     setTimeout(() => {
       logoDelRef.current.style.opacity = "1"
-    }, 1900)
+    }, 700)
     setTimeout(() => {
       logoVeranoRef.current.style.opacity = "1"
-    }, 2400)
+    }, 800)
   }, [])
 
   return (
@@ -29,6 +29,7 @@ export default function Hero() {
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-once="true"
+        data-aos-delay="800"
         style={{
           backgroundImage: `url(${"/assets/images/kh-heroes-poster.webp"})`
         }}
@@ -64,6 +65,10 @@ export default function Hero() {
               className="w-[150px] md:w-[190px] absolute object-cover"
               src="/assets/images/sun-background.webp"
               alt=""
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+              data-aos-delay="800"
             />
           </div>
         </div>
@@ -74,6 +79,7 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-once="true"
+          data-aos-delay="800"
         />
       </div>
     </div>

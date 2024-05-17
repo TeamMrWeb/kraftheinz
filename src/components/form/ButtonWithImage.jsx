@@ -19,6 +19,7 @@ export default function ButtonWithImage({
       onClick={onClick}
       data-aos="fade-down"
       data-aos-duration="1000"
+      data-aos-once="true"
     >
       {text}
       <Image

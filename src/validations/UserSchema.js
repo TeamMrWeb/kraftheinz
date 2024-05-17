@@ -34,7 +34,7 @@ export const userSchema = z.object({
     .refine(file => file?.size <= MAX_FILE_SIZE, `Max image size is 5MB.`)
     .refine(
       file => ACCEPTED_IMAGE_TYPES.includes(file?.type),
-      "Solo se admiten formatos .jpg, .jpeg, .png, y .webp"
+      "Solo se admiten formatos .jpg, .jpeg, y .png"
     ),
   termsAndConditions: z
     .string({

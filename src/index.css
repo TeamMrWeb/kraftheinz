@@ -29,14 +29,14 @@
 }
 
 .logo-los {
-  animation: bounce 0.5s 0.5s ease-in-out;
+  animation: bounce 0.3s 0.5s ease-in-out;
 }
 .logo-heroes {
-  animation: bounce 0.5s 1s ease-in-out;
+  animation: bounce 0.3s 0.6s ease-in-out;
 }
 .logo-del {
-  animation: bounce 0.5s 1.5s ease-in-out;
+  animation: bounce 0.3s 0.7s ease-in-out;
 }
 .logo-verano {
-  animation: bounce 0.5s 2s ease-in-out;
+  animation: bounce 0.3s 0.8s ease-in-out;
 }

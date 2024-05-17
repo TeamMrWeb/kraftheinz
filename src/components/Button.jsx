@@ -6,6 +6,7 @@ export default function Button({ className, children, props, type }) {
       type={type}
       data-aos="fade-down"
       data-aos-duration="1000"
+      data-aos-once="true"
     >
       {children}
     </button>

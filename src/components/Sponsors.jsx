@@ -12,6 +12,7 @@ export default function Sponsors({ className }) {
           data-aos-duration="1000"
           data-aos-delay="200"
           data-aos-offset="0"
+          data-aos-once="true"
         />
         <img
           className="w-20 md:w-40"
@@ -21,6 +22,7 @@ export default function Sponsors({ className }) {
           data-aos-duration="1000"
           data-aos-offset="0"
           data-aos-delay="400"
+          data-aos-once="true"
         />
         <img
           className="w-16 md:w-32"
@@ -30,6 +32,7 @@ export default function Sponsors({ className }) {
           data-aos-duration="1000"
           data-aos-offset="0"
           data-aos-delay="600"
+          data-aos-once="true"
         />
       </div>
     </aside>
