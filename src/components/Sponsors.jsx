@@ -3,7 +3,7 @@ export default function Sponsors({ className }) {
     <aside
       className={`w-full bg-mustard flex justify-center items-center ${className}`}
     >
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-24">
         <img
           className="w-12 md:w-24"
           src="/assets/images/oscar-mayer-logo.webp"

@@ -6,7 +6,7 @@ export default function SocialMedia({ className }) {
       data-aos-duration="1000"
       data-aos-once="true"
     >
-      <h2 className="font-bebasNeue text-[26px] md:text-[34px]">
+      <h2 className="font-bebasNeue text-[26px] md:text-5xl">
         SÍGUENOS EN NUESTRAS REDES
       </h2>
       <div className="flex items-center gap-5">

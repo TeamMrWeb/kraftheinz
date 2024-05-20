@@ -19,8 +19,8 @@ export default function App() {
           <Hero />
           {ready && (
             <>
-              <div className="w-full flex justify-center flex-col items-center top-shadow z-20 bg-black rounded-br-[90px] md:rounded-br-[150px] pb-8 md:pb-20 pt-10 md:pt-14">
-                <main className="w-full max-w-[650px] flex justify-center items-center flex-col gap-10 px-6">
+              <div className="w-full flex justify-center flex-col items-center top-shadow z-20 bg-black rounded-br-[90px] md:rounded-br-[150px] pb-8 md:pb-20">
+                <main className="w-full max-w-[800px] flex justify-center items-center flex-col gap-10 px-8 md:px-0">
                   <Header />
                   <Rules />
                   <Form />

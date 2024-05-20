@@ -1,6 +1,6 @@
 export default function Rules() {
   return (
-    <section className="w-full flex">
+    <section className="w-full flex md:justify-center">
       <div
         className="font-arial uppercase text-lg md:text-[24px] font-bold underline flex items-center gap-3"
         data-aos="fade-up"

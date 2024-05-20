@@ -1,8 +1,8 @@
 export default function Header() {
   return (
-    <header className="flex w-full flex-col gap-10 items-center text-center z-10">
+    <header className="flex w-full flex-col gap-5 md:gap-10 items-center text-center z-10">
       <h1
-        className="tracking-wide uppercase text-[38px] md:text-6xl"
+        className="tracking-wide uppercase text-4xl md:text-7xl mt-5"
         data-aos="fade-up"
         data-aos-offset="0"
         data-aos-duration="1000"
@@ -18,9 +18,9 @@ export default function Header() {
         data-aos-once="true"
       >
         <h2 className="uppercase text-2xl md:text-4xl font-normal leading-none">
-          SOBRE
+          <span className="tracking-widest">SOBRE</span>
           <div className="flex gap-1 text-crimson leading-normal">
-            <small className="text-[34px] md:text-5xl leading-snug mt-2">
+            <small className="text-[34px] md:text-4xl leading-snug mt-2">
               $
             </small>
             <span className="text-[68px] md:text-8xl leading-none">6,500</span>
