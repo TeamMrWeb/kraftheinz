@@ -23,14 +23,14 @@
     opacity: 1;
   }
   75% {
-    transform: scale(1.05);
+    transform: scale(1.2);
   }
-  85% {
+  100% {
     transform: scale(1);
   }
 }
 
-@keyframes bounce4 {
+@keyframes bounce2 {
   0% {
     opacity: 0;
     transform: scale(0);
@@ -44,12 +44,12 @@
   55% {
     transform: scale(1.05);
   }
-  60% {
+  65% {
     transform: scale(1);
   }
 }
 
-@keyframes bounce5 {
+@keyframes bounce3 {
   0% {
     opacity: 0;
     transform: scale(0);
@@ -60,25 +60,44 @@
   40.1% {
     opacity: 1;
   }
-  57.5% {
+  50% {
+    transform: scale(1.2);
+  }
+  55% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce4 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  39% {
+    opacity: 0;
+  }
+  39.1% {
+    opacity: 1;
+  }
+  50% {
     transform: scale(1.05);
   }
-  60% {
+  55% {
     transform: scale(1);
   }
 }
 
 .logo-los {
-  animation: bounce1 0.2s ease-in-out;
+  animation: bounce1 0.5s ease-in-out;
 }
 .logo-heroes {
-  animation: bounce1 1s ease-in-out;
+  animation: bounce2 1.5s ease-in-out;
 }
 .logo-del {
-  animation: bounce4 2s ease-in-out;
+  animation: bounce3 2.5s ease-in-out;
 }
 .logo-verano {
-  animation: bounce5 3s ease-in-out;
+  animation: bounce4 3.5s ease-in-out;
 }
 
 @keyframes fadein {
@@ -108,7 +127,7 @@
 }
 
 .background {
-  animation: 2s ease 0s normal forwards 1 fadein;
+  animation: 2.5s ease 0s normal forwards 1 fadein;
 }
 
 .background-sun {
@@ -117,6 +136,24 @@
 
 .kraftheninz-logo {
   animation: 2.5s ease 0s normal forwards 1 fadeInDown;
+}
+
+@keyframes modalFadeInDown {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  animation: 0.5s modalFadeInDown;
 }
 
 body {

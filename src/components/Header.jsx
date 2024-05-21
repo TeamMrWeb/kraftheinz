@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="flex w-full flex-col gap-5 md:gap-10 items-center text-center z-10">
       <h1
-        className="tracking-wide uppercase text-4xl md:text-7xl mt-5"
+        className="tracking-wide uppercase text-5xl md:text-7xl mt-5"
         data-aos="fade-up"
         data-aos-offset="0"
         data-aos-duration="1000"

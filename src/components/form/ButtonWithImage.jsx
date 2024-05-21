@@ -12,7 +12,7 @@ export default function ButtonWithImage({
 }) {
   return (
     <label
-      className={`bg-crimson flex justify-center font-normal items-center text-lg gap-3 rounded-full text-center h-[44px] md:h-[68px] md:text-[27px] max-w-[422px] w-full cursor-pointer ${
+      className={`bg-crimson flex justify-center font-normal items-center text-lg gap-3 p-4 sm:p-0 rounded-full text-center min-h-[44px] h-max sm:h-[44px] md:h-[68px] md:text-[27px] max-w-[422px] w-full cursor-pointer ${
         className ? className : ""
       }`}
       htmlFor={htmlFor}

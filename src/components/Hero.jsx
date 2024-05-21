@@ -28,12 +28,12 @@ export default function Hero() {
             loading="eager"
           />
           <img
-            className="w-[30px] md:w-[50px] object-cover bg-center bg-no-repeat bg-cover m-auto inset-0 z-10 absolute top-[14%] logo-del"
+            className="w-[30px] md:w-[50px] object-cover bg-center bg-no-repeat bg-cover m-auto inset-0 z-10 absolute pt-5 md:pt-[36px] logo-del"
             src="/assets/images/del.png"
             alt="del"
           />
           <img
-            className="w-[160px] md:w-[250px] object-cover bg-center bg-no-repeat bg-cover m-auto inset-0 z-10 mt-4 md:mt-8 logo-verano"
+            className="w-[160px] md:w-[250px] object-cover bg-center bg-no-repeat bg-cover m-auto inset-0 z-10 mt-4 md:mt-7 logo-verano"
             src="/assets/images/verano.png"
             alt="verano"
             fetchPriority="high"
