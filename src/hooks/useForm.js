@@ -1,68 +1,85 @@
 import { useState } from "react"
 import { userSchema } from "../validations/UserSchema"
 
-export const useForm = () => {
-  const [inputErrors, setInputErrors] = useState({})
-  const [previewImage, setPreviewImage] = useState()
-  const [showPreviewImage, setShowPreviewImage] = useState()
+export const useForm = ({ onSubmit }) => {
+  const [showModal, setShowModal] = useState({ show: false, message: "" })
+  const [loading, setLoading] = useState(false)
+  const [previewHeroImage, setPreviewHeroImage] = useState({
+    image: null,
+    show: false
+  })
+  const [previewReceiptImage, setPreviewReceiptImage] = useState({
+    image: null,
+    show: false
+  })
 
-  const getInputNameAndMessageFromIssues = issues => {
-    const transformedObject = {}
-    issues.forEach(item => {
-      const { path, message } = item
-      const key = path[0]
-      if (!transformedObject[key]) {
-        transformedObject[key] = { message }
-      } else {
-        transformedObject[key].message = message
-      }
-    })
-    return transformedObject
-  }
-
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const fields = Object.fromEntries(formData.entries())
     const result = userSchema.safeParse(fields)
     if (result.success === false) {
-      const inputsAndMessages = getInputNameAndMessageFromIssues(
-        result?.error?.issues
-      )
-      setInputErrors(inputsAndMessages)
+      setShowModal({
+        show: true,
+        message: `OCURRIÓ UN ERROR. \n ASEGÚRESE DE LLENAR TODOS LOS CAMPOS CORRECTAMENTE.`
+      })
     } else {
-      setInputErrors({})
+      setLoading(true)
+      const res = await onSubmit({ data: fields })
+      setLoading(false)
+      if (!res?.error) {
+        setShowModal({ show: true, message: `¡YA ESTÁS PARTICIPANDO!` })
+      } else {
+        setShowModal({
+          show: true,
+          message: `OCURRIÓ UN ERROR. \n INTENTÁ DE NUEVO MÁS TARDE`
+        })
+      }
     }
   }
 
-  const handleSetPreviewImage = e => {
+  const handleSetPreviewImage = (e, type) => {
     const file = e.target.files[0]
     if (file) {
       const reader = new FileReader()
       reader.onloadend = () => {
-        setPreviewImage(reader.result)
+        if (type === "hero") {
+          setPreviewHeroImage({ image: reader.result, show: true })
+        } else setPreviewReceiptImage({ image: reader.result, show: true })
       }
       reader.readAsDataURL(file)
     }
   }
 
-  const handleShowPreviewImage = () => {
-    if (!previewImage) return
-    setShowPreviewImage(!showPreviewImage)
+  const handleShowPreviewImage = type => {
+    if (type === "hero" && previewHeroImage.image) {
+      setPreviewHeroImage({ ...previewHeroImage, show: !previewHeroImage.show })
+    } else if (type === "receipt" && previewReceiptImage.image) {
+      setPreviewReceiptImage({
+        ...previewReceiptImage,
+        show: !previewReceiptImage.show
+      })
+    }
   }
 
-  const removePreviewImage = () => {
+  const removePreviewImage = type => {
     handleShowPreviewImage()
-    setPreviewImage()
+    if (type === "hero") {
+      setPreviewHeroImage({ image: null, show: false })
+    } else {
+      setPreviewReceiptImage({ image: null, show: false })
+    }
   }
 
   return {
     handleSubmit,
-    inputErrors,
-    previewImage,
+    showModal,
+    setShowModal,
+    previewHeroImage,
+    previewReceiptImage,
     handleSetPreviewImage,
-    showPreviewImage,
     handleShowPreviewImage,
-    removePreviewImage
+    removePreviewImage,
+    loading
   }
 }
