@@ -7,26 +7,22 @@ function PreviewImage({
   return (
     <div className="relative">
       <button
-        className="p-98 rounded-full flex justify-center items-center absolute top-2 left-2 z-10 cursor-pointer"
+        className="size-10 rounded-full flex justify-center items-center absolute top-2 left-2 z-10 cursor-pointer bg-crimson"
         onClick={removePreviewImage}
         type="button"
       >
         <img
-          className="size-6 md:size-7"
+          className="size-6"
           src="/assets/images/trash-icon.png"
           alt="Icono de borrar"
         />
       </button>
       <button
-        className="p-98 rounded-full flex justify-center items-center absolute top-2 right-2 z-10 cursor-pointer"
+        className="size-10 rounded-full flex justify-center items-center absolute top-2 right-2 z-10 cursor-pointer bg-crimson text-2xl font-normal"
         onClick={handleShowPreviewImage}
         type="button"
       >
-        <img
-          className="size-5 md:size-6"
-          src="/assets/images/close-icon.png"
-          alt="Icono de cerrar"
-        />
+        Ok
       </button>
       <img
         src={previewImage}

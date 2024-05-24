@@ -1,6 +1,6 @@
 import ButtonWithImage from "./form/ButtonWithImage"
-import Modal from "./Modal"
 import PreviewImage from "./PreviewImage"
+import PreviewImageModal from "./PreviewImageModal"
 
 export default function UploadImageButton({
   previewImage,
@@ -10,13 +10,8 @@ export default function UploadImageButton({
   removePreviewImage,
   text,
   alt,
-  setShowModal
+  inputRef
 }) {
-  const handleSetShowModal = () => {
-    handleShowPreviewImage(imageType)
-    setShowModal(false)
-  }
-
   return (
     <>
       <div className="w-full flex justify-center md:items-start flex-col items-center">
@@ -38,19 +33,20 @@ export default function UploadImageButton({
           id={imageType}
           name={imageType}
           className="invisible absolute"
+          ref={inputRef}
           onChange={e => handleSetPreviewImage(e, imageType)}
           accept="image/png, image/jpg, image/jpeg"
         />
       </div>
       {previewImage.show && (
-        <Modal setShowModal={handleSetShowModal} type="image">
+        <PreviewImageModal>
           <PreviewImage
             previewImage={previewImage.image}
             removePreviewImage={() => removePreviewImage(imageType)}
             handleShowPreviewImage={() => handleShowPreviewImage(imageType)}
             alt={alt}
           />
-        </Modal>
+        </PreviewImageModal>
       )}
     </>
   )

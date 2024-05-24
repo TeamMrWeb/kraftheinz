@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { userSchema } from "../validations/UserSchema"
+import { useRef } from "react"
 
 export const useForm = ({ onSubmit }) => {
   const [showModal, setShowModal] = useState({ show: false, message: "" })
@@ -12,6 +13,8 @@ export const useForm = ({ onSubmit }) => {
     image: null,
     show: false
   })
+  const heroInputRef = useRef(null)
+  const receiptInputRef = useRef(null)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -29,7 +32,13 @@ export const useForm = ({ onSubmit }) => {
       setLoading(false)
       if (!res?.error) {
         setShowModal({ show: true, message: `¡YA ESTÁS PARTICIPANDO!` })
-      } else {
+        e.target.reset()
+      }
+      if (res?.error?.response?.data?.message === "El participante ya existe") {
+        setShowModal({ show: true, message: `¡YA ESTÁS PARTICIPANDO!` })
+        e.target.reset()
+      }
+      if (res?.error?.response?.data) {
         setShowModal({
           show: true,
           message: `OCURRIÓ UN ERROR. \n INTENTÁ DE NUEVO MÁS TARDE`
@@ -65,8 +74,10 @@ export const useForm = ({ onSubmit }) => {
   const removePreviewImage = type => {
     handleShowPreviewImage()
     if (type === "hero") {
+      heroInputRef.current.value = ""
       setPreviewHeroImage({ image: null, show: false })
     } else {
+      receiptInputRef.current.value = ""
       setPreviewReceiptImage({ image: null, show: false })
     }
   }
@@ -80,6 +91,8 @@ export const useForm = ({ onSubmit }) => {
     handleSetPreviewImage,
     handleShowPreviewImage,
     removePreviewImage,
-    loading
+    loading,
+    heroInputRef,
+    receiptInputRef
   }
 }

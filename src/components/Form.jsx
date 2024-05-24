@@ -17,7 +17,9 @@ export default function Form() {
     previewReceiptImage,
     handleShowPreviewImage,
     removePreviewImage,
-    loading
+    loading,
+    heroInputRef,
+    receiptInputRef
   } = useForm({ onSubmit: register })
 
   return (
@@ -88,7 +90,7 @@ export default function Form() {
             removePreviewImage={removePreviewImage}
             text="SUBE LA FOTO DE TU HÉROE DEL VERANO"
             alt="Imágen de héroe del verano"
-            setShowModal={setShowModal}
+            inputRef={heroInputRef}
           />
           <UploadImageButton
             previewImage={previewReceiptImage}
@@ -98,7 +100,7 @@ export default function Form() {
             removePreviewImage={removePreviewImage}
             text="SUBE TU RECIBO DE COMPRA"
             alt="Imágen de recibo de compra"
-            setShowModal={setShowModal}
+            inputRef={receiptInputRef}
           />
         </div>
         <div className="flex flex-col gap-2">
